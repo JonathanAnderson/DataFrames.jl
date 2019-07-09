@@ -39,7 +39,7 @@ let
         return position(io)
     end
     ourstrwidth(x::AbstractString) = strwidth(x) + 2 # -> Int
-    myconv = VERSION < v"0.4-" ? convert : Base.unsafe_convert
+    myconv = Base.unsafe_convert
     ourstrwidth(s::Symbol) =
         @compat Int(ccall(:u8_strwidth,
                           Csize_t,
